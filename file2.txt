@@ -1,0 +1,3 @@
+Add a file called “file2.txt” to the branch (you can make up some content) and stage it. Try to commit it without
+adding a commit message.
+Use “git status” regularly to see what is happening as from now!
