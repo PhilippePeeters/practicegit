@@ -1,0 +1,242 @@
+B) Undoing things
+
+exervice 1
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ touch file3.txt
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ touch file4.txt
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git status
+	On branch firstbranch
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        file3.txt
+	        file4.txt
+	
+	nothing added to commit but untracked files present (use "git add" to track)
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git add file3.txt
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git add file4.txt
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git status
+	On branch firstbranch
+	Changes to be committed:
+	  (use "git restore --staged <file>..." to unstage)
+	        new file:   file3.txt
+	        new file:   file4.txt
+		
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git rm --cached file4.txt
+	rm 'file4.txt'
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git status
+	On branch firstbranch
+	Changes to be committed:
+	  (use "git restore --staged <file>..." to unstage)
+	        new file:   file3.txt
+	
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        file4.txt
+	
+exervice 2
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git commit -m "Commit file3.txt"
+	[firstbranch 3296e55] Commit file3.txt
+	1 file changed, 0 insertions(+), 0 deletions(-)
+	create mode 100644 file3.txt
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git log
+	commit 7e2a1ce377e59a7f4b2ba455d0a038a78ca5b696 (HEAD -> firstbranch)
+	Author: Philippe Peeters <philippe.a.peeters@bnpparibasfortis.com>
+	Date:   Thu Sep 10 14:22:34 2020 +0200
+	
+	    Commit file3.txt
+	
+	commit b017420b2b360cbf4c9cd45887ead1555fbd7def (origin/firstbranch)
+	Author: Philippe Peeters <philippe.a.peeters@bnpparibasfortis.com>
+	Date:   Thu Sep 10 12:55:20 2020 +0200
+	
+	    If no message need to fill in it !! on file2.txt
+	
+	commit b45d8fe819fca13afebb3f0a2c9a542fbb36ebaf (origin/master, origin/HEAD, master)
+	Author: PhilippePeeters <70889675+PhilippePeeters@users.noreply.github.com>
+	Date:   Thu Sep 10 12:46:16 2020 +0200
+	
+	    Add New files
+	
+	    File1.txt
+	
+	commit d3c6f999a4c8be76d97889d3156df9080be603b7
+	Author: PhilippePeeters <70889675+PhilippePeeters@users.noreply.github.com>
+	Date:   Thu Sep 10 12:45:33 2020 +0200
+
+	    Initial commit
+
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ ls -al
+	total 7
+	drwxr-xr-x 1 Administrateur 197121   0 sept. 10 10:23 ./
+	drwxr-xr-x 1 Administrateur 197121   0 sept. 10 09:49 ../
+	drwxr-xr-x 1 Administrateur 197121   0 sept. 10 10:28 .git/
+	-rw-r--r-- 1 Administrateur 197121  20 sept. 10 09:49 file1.txt
+	-rw-r--r-- 1 Administrateur 197121 212 sept. 10 10:06 file2.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 10:23 file3.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 10:23 file4.txt
+	-rw-r--r-- 1 Administrateur 197121  45 sept. 10 09:49 README.md
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git commit --amend -m "Change Comment file3.txt"
+	[firstbranch 7bd6d42] Change Comment file3.txt
+	 Date: Thu Sep 10 14:22:34 2020 +0200
+	 1 file changed, 0 insertions(+), 0 deletions(-)
+	 create mode 100644 file3.txt
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git log
+	commit 7bd6d42e193c6865f2320ad0850b96aaa93b42de (HEAD -> firstbranch)
+	Author: Philippe Peeters <philippe.a.peeters@bnpparibasfortis.com>
+	Date:   Thu Sep 10 14:22:34 2020 +0200
+	
+	    Change Comment file3.txt
+	
+	commit b017420b2b360cbf4c9cd45887ead1555fbd7def (origin/firstbranch)
+	Author: Philippe Peeters <philippe.a.peeters@bnpparibasfortis.com>
+	Date:   Thu Sep 10 12:55:20 2020 +0200
+	
+	    If no message need to fill in it !! on file2.txt
+	
+	commit b45d8fe819fca13afebb3f0a2c9a542fbb36ebaf (origin/master, origin/HEAD, master)
+	Author: PhilippePeeters <70889675+PhilippePeeters@users.noreply.github.com>
+	Date:   Thu Sep 10 12:46:16 2020 +0200
+	
+	    Add New files
+	
+	    File1.txt
+	
+	commit d3c6f999a4c8be76d97889d3156df9080be603b7
+	Author: PhilippePeeters <70889675+PhilippePeeters@users.noreply.github.com>
+	Date:   Thu Sep 10 12:45:33 2020 +0200
+	
+	    Initial commit
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git revert HEAD --no-edit
+	Removing file3.txt
+	[firstbranch 6e4710a] Revert "Change Comment file3.txt"
+	 Date: Thu Sep 10 14:27:45 2020 +0200
+	 1 file changed, 0 insertions(+), 0 deletions(-)
+	 delete mode 100644 file3.txt
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ ls -l
+	total 3
+	-rw-r--r-- 1 Administrateur 197121  20 sept. 10 12:49 file1.txt
+	-rw-r--r-- 1 Administrateur 197121 215 sept. 10 14:19 file2.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 14:19 file4.txt
+	-rw-r--r-- 1 Administrateur 197121  45 sept. 10 12:49 README.md
+	
+exervice 3
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git reflog
+	f867b88 (HEAD -> firstbranch) HEAD@{0}: revert: Revert "dd"
+	236cdc4 HEAD@{1}: commit: dd
+	e03b30f HEAD@{2}: reset: moving to HEAD^
+	35e3cc5 HEAD@{3}: commit: test Again
+	e03b30f HEAD@{4}: commit: fff
+	8907548 HEAD@{5}: reset: moving to HEAD~1
+	8babe59 HEAD@{6}: revert: Revert "New test file3.txt"
+	8907548 HEAD@{7}: commit: New test file3.txt
+	b017420 (origin/firstbranch) HEAD@{8}: reset: moving to HEAD~2
+	6e4710a HEAD@{9}: revert: Revert "Change Comment file3.txt"
+	7bd6d42 HEAD@{10}: commit (amend): Change Comment file3.txt
+	7e2a1ce HEAD@{11}: commit: Commit file3.txt
+	b017420 (origin/firstbranch) HEAD@{12}: checkout: moving from master to firstbranch
+	b45d8fe (origin/master, origin/HEAD, master) HEAD@{13}: checkout: moving from firstbranch to master
+	b017420 (origin/firstbranch) HEAD@{14}: commit: If no message need to fill in it !! on file2.txt
+	b45d8fe (origin/master, origin/HEAD, master) HEAD@{15}: checkout: moving from master to firstbranch
+	b45d8fe (origin/master, origin/HEAD, master) HEAD@{16}: clone: from https://github.com/PhilippePeeters/practicegit.git
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git revert HEAD~2 --no-edit
+	[firstbranch d107e97] Revert "fff"
+	 Date: Thu Sep 10 15:12:17 2020 +0200
+	 1 file changed, 0 insertions(+), 0 deletions(-)
+	 create mode 100644 file3.txt
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ ls -l
+	total 3
+	-rw-r--r-- 1 Administrateur 197121  20 sept. 10 12:49 file1.txt
+	-rw-r--r-- 1 Administrateur 197121 215 sept. 10 14:19 file2.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 15:12 file3.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 14:19 file4.txt
+	-rw-r--r-- 1 Administrateur 197121  45 sept. 10 12:49 README.md
+
+exervice 4
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git add file4.txt
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git commit -m "Commit file4.txt"
+	[firstbranch 806c7fe] Commit file4.txt
+	 1 file changed, 0 insertions(+), 0 deletions(-)
+	 create mode 100644 file4.txt
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git status
+	On branch firstbranch
+	nothing to commit, working tree clean
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git reset --soft HEAD^
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ ls -l
+	total 3
+	-rw-r--r-- 1 Administrateur 197121  20 sept. 10 12:49 file1.txt
+	-rw-r--r-- 1 Administrateur 197121 215 sept. 10 14:19 file2.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 15:12 file3.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 14:19 file4.txt
+	-rw-r--r-- 1 Administrateur 197121  45 sept. 10 12:49 README.md
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git status
+	On branch firstbranch
+	Changes to be committed:
+	  (use "git restore --staged <file>..." to unstage)
+	        new file:   file4.txt
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git rm --cached file4.txt
+	rm 'file4.txt'
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git status
+	On branch firstbranch
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        file4.txt
+	
+	nothing added to commit but untracked files present (use "git add" to track)
+	
+exervice 5
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git push origin firstbranch
+	Enumerating objects: 8, done.
+	Counting objects: 100% (8/8), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (6/6), done.
+	Writing objects: 100% (7/7), 743 bytes | 371.00 KiB/s, done.
+	Total 7 (delta 4), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+	To https://github.com/PhilippePeeters/practicegit.git
+	   b017420..d107e97  firstbranch -> firstbranch
