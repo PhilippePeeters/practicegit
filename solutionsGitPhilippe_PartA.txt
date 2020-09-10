@@ -1,0 +1,119 @@
+A) Basic Git Commands
+exervice 1
+	Creation of the repository and the README.md file with the graphical interface of GitHub
+	in a command box :
+	$ echo "hello from file 1" >> file1.txt
+	Once created use graphical interface of GitHub.com to add this file
+	Add File > Upload files and Drap and drop the file in the repository
+
+exervice 2
+	$ pwd
+	$ cd /E
+	$ mkdir JavaReskilling
+	$ cd JavaReskilling
+	$ mkdir GitProjects
+	$ cd GitProjects
+	$ ls -al
+	total 0
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 10 09:42 ./
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 10 09:42 ../
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects
+	$ git init
+	Initialized empty Git repository in E:/JavaReskilling/GitProjects/.git/
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects (master)
+	$ ls -al
+	total 4
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 10 09:47 ./
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 10 09:42 ../
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 10 09:47 .git/
+	
+exervice 3
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects (master)
+	$ git clone https://github.com/PhilippePeeters/practicegit.git
+	Cloning into 'practicegit'...
+	remote: Enumerating objects: 6, done.
+	remote: Counting objects: 100% (6/6), done.
+	remote: Compressing objects: 100% (3/3), done.
+	remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+	Unpacking objects: 100% (6/6), 1.28 KiB | 4.00 KiB/s, done.
+	
+exervice 4
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects (master)
+	$ cd practicegit/
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects (master)
+	$ ls -al
+	total 6
+	drwxr-xr-x 1 Administrateur 197121  0 sept. 10 09:49 ./
+	drwxr-xr-x 1 Administrateur 197121  0 sept. 10 09:49 ../
+	drwxr-xr-x 1 Administrateur 197121  0 sept. 10 09:49 .git/
+	-rw-r--r-- 1 Administrateur 197121 20 sept. 10 09:49 file1.txt
+	-rw-r--r-- 1 Administrateur 197121 45 sept. 10 09:49 README.md
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects (master)
+	$ Git checkout -b firstbranch
+	Switched to a new branch 'firstbranch'
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ 
+	
+exervice 5
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ touch file2.txt
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ vi file2.txt
+	(Add some text in the file)
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ cat file2.txt
+	Add a file called “file2.txt” to the branch (you can make up some content) and stage it. Try to commit it without
+	adding a commit message.
+	Use “git status” regularly to see what is happening as from now!
+
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git status
+	On branch firstbranch
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        file2.txt
+	
+	nothing added to commit but untracked files present (use "git add" to track)
+
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git add file2.txt
+	warning: LF will be replaced by CRLF in file2.txt.
+	The file will have its original line endings in your working directory
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git status
+	On branch firstbranch
+	Changes to be committed:
+	  (use "git restore --staged <file>..." to unstage)
+	        new file:   file2.txt
+	
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git commit
+	[firstbranch 40599da] If no message need to fill in it !
+	                                                         1 file changed, 3 insertions(+)
+	                                                                                         create mode 100644 file2.txt
+
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git status
+	On branch firstbranch
+	nothing to commit, working tree clean
+
+exervice 6
+	Administrateur@philippe-PC MINGW64 /E/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git push origin firstbranch
+	Enumerating objects: 4, done.
+	Counting objects: 100% (4/4), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 491 bytes | 491.00 KiB/s, done.
+	Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+	remote:
+	remote: Create a pull request for 'firstbranch' on GitHub by visiting:
+	remote:      https://github.com/PhilippePeeters/practicegit/pull/new/firstbranch
+	remote:
+	To https://github.com/PhilippePeeters/practicegit.git
+	 * [new branch]      firstbranch -> firstbranch
+	
