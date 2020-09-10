@@ -1,3 +1,22 @@
 Add a file called “file2.txt” to the branch (you can make up some content) and stage it. Try to commit it without
 adding a commit message.
 Use “git status” regularly to see what is happening as from now!
+
+
+             \\\|///                                           
+            \\ ~ ~ //                                          
+            (  @ @  )                                          
+ _________OOOO-(_)-OOOO________                                
+________________________________________
+Philippe Peeters
+Rue des Mineurs, 51
+Tél: +32 71 43 91 85
+GSM : +32 490 19 95 04
+S.V.P. considérez l'environnement avant d'imprimer cet e-mail
+Denk aan het milieu alvorens deze e-mail af te drukken
+Please consider the environment before printing this e-mail
+                   OOOO.               
+ _________.OOOO____(   )_______        
+          (   )     ) /                
+           \ (     (_/                 
+            \_)                        
