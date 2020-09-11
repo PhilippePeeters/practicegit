@@ -1,0 +1,293 @@
+C) Some more Git
+
+exervice 1
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git pull origin firstbranch
+	From https://github.com/PhilippePeeters/practicegit
+	 * branch            firstbranch -> FETCH_HEAD
+	Updating d107e97..8c5c716
+	Fast-forward
+	 file2.txt | 19 +++++++++++++++++++
+	 1 file changed, 19 insertions(+)
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ cat file2.txt
+	Add a file called “file2.txt” to the branch (you can make up some content) and stage it. Try to commit it without
+	adding a commit message.
+	Use “git status” regularly to see what is happening as from now!
+	
+	
+	             \\\|///
+	            \\ ~ ~ //
+	            (  @ @  )
+	 _________OOOO-(_)-OOOO________
+	________________________________________
+	Philippe Peeters
+	Rue des Mineurs, 51
+	Tél: +32 71 43 91 85
+	GSM : +32 490 19 95 04
+	?S.V.P. considérez l'environnement avant d'imprimer cet e-mail
+	Denk aan het milieu alvorens deze e-mail af te drukken
+	Please consider the environment before printing this e-mail
+	                   OOOO.
+	 _________.OOOO____(   )_______
+	          (   )     ) /
+	           \ (     (_/
+	            \_)
+
+exervice 2
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (firstbranch)
+	$ git checkout -b secondbranch
+	Switched to a new branch 'secondbranch'
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git branch -a
+	  firstbranch
+	  master
+	* secondbranch
+	  remotes/origin/HEAD -> origin/master
+	  remotes/origin/firstbranch
+	  remotes/origin/master
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git rebase firstbranch
+	Current branch secondbranch is up to date.
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ ls -l
+	total 6
+	-rw-r--r-- 1 Administrateur 197121  20 sept. 10 12:49 file1.txt
+	-rw-r--r-- 1 Administrateur 197121 996 sept. 11 08:24 file2.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 11 08:24 file3.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 14:19 file4.txt
+	-rw-r--r-- 1 Administrateur 197121  45 sept. 10 12:49 README.md
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git checkout firstbranch
+	Switched to branch 'firstbranch'
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ ls -l
+	total 6
+	-rw-r--r-- 1 Administrateur 197121  20 sept. 10 12:49 file1.txt
+	-rw-r--r-- 1 Administrateur 197121 996 sept. 11 08:24 file2.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 11 08:24 file3.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 14:19 file4.txt
+	-rw-r--r-- 1 Administrateur 197121  45 sept. 10 12:49 README.md
+		
+exervice 3
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git branch -d firstbranch
+	Deleted branch firstbranch (was 8c5c716).
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ ls -l
+	total 6
+	-rw-r--r-- 1 Administrateur 197121  20 sept. 10 12:49 file1.txt
+	-rw-r--r-- 1 Administrateur 197121 996 sept. 11 08:24 file2.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 11 08:24 file3.txt
+	-rw-r--r-- 1 Administrateur 197121   0 sept. 10 14:19 file4.txt
+	-rw-r--r-- 1 Administrateur 197121  45 sept. 10 12:49 README.md
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git push origin --delete firstbranch
+	To https://github.com/PhilippePeeters/practicegit.git
+	 - [deleted]         firstbranch
+
+exervice 4
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git checkout master
+	Switched to branch 'master'
+	Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+	  (use "git pull" to update your local branch)
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master)
+	$ touch file2.txt
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master)
+	$ echo "This is my comments in the file2.txt on the Master branch first" >> file2.txt
+	
+exervice 5
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master)
+	$ git add file2.txt
+	warning: LF will be replaced by CRLF in file2.txt.
+	The file will have its original line endings in your working directory
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master)
+	$ git commit -m "Commit file2.txt master branch"
+	[master df12e0c] Commit file2.txt master branch
+	 1 file changed, 1 insertion(+)
+	 create mode 100644 file2.txt
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master)
+	$ git merge secondbranch
+	CONFLICT (add/add): Merge conflict in file2.txt
+	Auto-merging file2.txt
+	Automatic merge failed; fix conflicts and then commit the result.
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master|MERGING)
+	$ git status
+	On branch master
+	Your branch is ahead of 'origin/master' by 2 commits.
+	  (use "git push" to publish your local commits)
+	
+	You have unmerged paths.
+	  (fix conflicts and run "git commit")
+	  (use "git merge --abort" to abort the merge)
+	
+	Changes to be committed:
+	        new file:   file3.txt
+	
+	Unmerged paths:
+	  (use "git add <file>..." to mark resolution)
+	        both added:      file2.txt
+	
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        file4.txt
+	
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master|MERGING)
+	$ cat file2.txt
+	<<<<<<< HEAD
+	This is my comments in the file2.txt on the Master branch first
+	=======
+	Add a file called “file2.txt” to the branch (you can make up some content) and stage it. Try to commit it without
+	adding a commit message.
+	Use “git status” regularly to see what is happening as from now!
+	
+	
+	             \\\|///
+	            \\ ~ ~ //
+	            (  @ @  )
+	 _________OOOO-(_)-OOOO________
+	________________________________________
+	Philippe Peeters
+	Rue des Mineurs, 51
+	Tél: +32 71 43 91 85
+	GSM : +32 490 19 95 04
+	?S.V.P. considérez l'environnement avant d'imprimer cet e-mail
+	Denk aan het milieu alvorens deze e-mail af te drukken
+	Please consider the environment before printing this e-mail
+	                   OOOO.
+	 _________.OOOO____(   )_______
+	          (   )     ) /
+	           \ (     (_/
+	            \_)
+	>>>>>>> secondbranch
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master|MERGING)
+	$ vi file2.txt
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master|MERGING)
+	$ git add .
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master|MERGING)
+	$ git commit -m "Resolved merge conflict by incorporating both suggestions."
+	[master d00e744] Resolved merge conflict by incorporating both suggestions.
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (master)
+	$ git merge secondbranch
+	Already up to date.
+	
+
+exervice 6
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ touch file5.txt
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ touch secret.txt
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ touch .gitignore
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ vi .gitignore
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ cat .gitignore
+	secret.txt
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git add .
+	warning: LF will be replaced by CRLF in .gitignore.
+	The file will have its original line endings in your working directory
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git status
+	On branch secondbranch
+	Your branch is up to date with 'origin/secondbranch'.
+	
+	Changes to be committed:
+	  (use "git restore --staged <file>..." to unstage)
+	        new file:   .gitignore
+	        new file:   file5.txt
+	
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git commit -m "Trying again without secret ;-)"
+	[secondbranch 551b695] Trying again without secret ;-)
+	 2 files changed, 1 insertion(+)
+	 create mode 100644 .gitignore
+	 create mode 100644 file5.txt
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ git push origin secondbranch
+	Enumerating objects: 4, done.
+	Counting objects: 100% (4/4), done.
+	Delta compression using up to 4 threads
+		Compressing objects: 100% (2/2), done.
+	Writing objects: 100% (3/3), 326 bytes | 326.00 KiB/s, done.
+	Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+	To https://github.com/PhilippePeeters/practicegit.git
+	   b94a257..551b695  secondbranch -> secondbranch
+	
+exervice 7
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ mkdir subdir
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ cd subdir/
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit/subdir (secondbranch)
+	$ touch file6.txt file7.txt file8.txt
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit/subdir (secondbranch)
+	$ ls -al
+	total 4
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 11 11:02 ./
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 11 11:01 ../
+	-rw-r--r-- 1 Administrateur 197121 0 sept. 11 11:02 file6.txt
+	-rw-r--r-- 1 Administrateur 197121 0 sept. 11 11:02 file7.txt
+	-rw-r--r-- 1 Administrateur 197121 0 sept. 11 11:02 file8.txt
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit/subdir (secondbranch)
+	$ git add .
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit/subdir (secondbranch)
+	$ git commit -m "And now what's happened ..."
+	[secondbranch 294888a] And now what's happened ...
+	 3 files changed, 0 insertions(+), 0 deletions(-)
+	 create mode 100644 subdir/file6.txt
+	 create mode 100644 subdir/file7.txt
+	 create mode 100644 subdir/file8.txt
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit/subdir (secondbranch)
+	$ git push
+	Enumerating objects: 4, done.
+	Counting objects: 100% (4/4), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 341 bytes | 341.00 KiB/s, done.
+	Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+	To https://github.com/PhilippePeeters/practicegit.git
+	   551b695..294888a  secondbranch -> secondbranch
