@@ -1,0 +1,107 @@
+D) Working in a team
+
+exervice 1
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit/subdir (secondbranch)
+	$ cd ..
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/practicegit (secondbranch)
+	$ cd ..
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects (master)
+	$ ls -l
+	total 4
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 11 11:01 practicegit/
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects (master)
+	$ git clone https://github.com/sschillebeeckx/gitex
+	Cloning into 'gitex'...
+	remote: Enumerating objects: 25, done.
+	remote: Counting objects: 100% (25/25), done.
+	remote: Compressing objects: 100% (19/19), done.
+	remote: Total 25 (delta 3), reused 10 (delta 2), pack-reused 0
+	Unpacking objects: 100% (25/25), 4.65 KiB | 5.00 KiB/s, done.
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects (master)
+	$ ls -l
+	total 4
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 11 11:11 gitex/
+	drwxr-xr-x 1 Administrateur 197121 0 sept. 11 11:01 practicegit/
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects (master)
+	$ cd gitex/
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master)
+	$ ls -l
+	total 2
+	-rw-r--r-- 1 Administrateur 197121 19 sept. 11 11:11 hello.txt
+	-rw-r--r-- 1 Administrateur 197121 17 sept. 11 11:11 README.md
+	
+exervice 2
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master)
+	$ vi hello.txt
+	
+
+exervice 3
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master)
+	$ git add .
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master)
+	$ git status
+	On branch master
+	Your branch is up to date with 'origin/master'.
+	
+	Changes to be committed:
+	  (use "git restore --staged <file>..." to unstage)
+	        modified:   hello.txt
+	
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master)
+	$ git commit -m "Working in a team"
+	[master cc085ce] Working in a team
+	 1 file changed, 1 insertion(+)
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master)
+	$ git push
+	remote: Permission to sschillebeeckx/gitex.git denied to PhilippePeeters.
+	fatal: unable to access 'https://github.com/sschillebeeckx/gitex/': The requested URL returned error: 403
+	
+	
+exervice 4
+
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master)
+	$ git pull
+	remote: Enumerating objects: 16, done.
+	remote: Counting objects: 100% (16/16), done.
+	remote: Compressing objects: 100% (10/10), done.
+	remote: Total 12 (delta 0), reused 12 (delta 0), pack-reused 0
+	Unpacking objects: 100% (12/12), 1.19 KiB | 2.00 KiB/s, done.
+	From https://github.com/sschillebeeckx/gitex
+	   04b98fa..6f8665f  master     -> origin/master
+	Auto-merging hello.txt
+	CONFLICT (content): Merge conflict in hello.txt
+	Automatic merge failed; fix conflicts and then commit the result.
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master|MERGING)
+	$ vi hello.txt
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master|MERGING)
+	$ git add .
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master|MERGING)
+	$ git commit -m "Add my name"
+	[master 28acbb8] Add my name
+	
+	Administrateur@philippe-PC MINGW64 /e/JavaReskilling/GitProjects/gitex (master)
+	$ git push
+	Enumerating objects: 15, done.
+	Counting objects: 100% (15/15), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (8/8), done.
+	Writing objects: 100% (9/9), 951 bytes | 237.00 KiB/s, done.
+	Total 9 (delta 2), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+	To https://github.com/sschillebeeckx/gitex
+	   6f8665f..28acbb8  master -> master
